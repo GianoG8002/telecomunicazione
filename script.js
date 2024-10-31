@@ -1,33 +1,24 @@
 document.getElementById('equationSelect').addEventListener('change', function() {
     const equation = this.value;
-    const input3Container = document.getElementById('input3Container');
     const input1 = document.getElementById('input1');
     const input2 = document.getElementById('input2');
     const textI1 = document.getElementById("textI1");
     const textI2 = document.getElementById("textI2");
-    const textI3 = document.getElementById("textI3");
 
 
     if (equation === 'tensione') {
-      input3Container.style.display = 'none';
       textI1.innerHTML = 'Valore intensità';
-      input1.removeAttribute('min')
       textI2.innerHTML = 'Valore resistenza';
       input2.min = '0';
     } else if (equation === 'resistenza'){
-      input3Container.style.display = 'none';
       textI1.innerHTML = 'Valore tensione';
-      input1.removeAttribute('min')
       textI2.innerHTML = 'Valore intensità';
       input2.removeAttribute('min')
     } else if (equation === 'intensita'){
-      input3Container.style.display = 'none';
       textI1.innerHTML = 'Valore tensione';
-      input1.removeAttribute('min')
       textI2.innerHTML = 'Valore resistenza';
       input2.min = '0'
     } else {
-      input3Container.style.display = 'block';
       textI1.innerHTML = 'Inserire primo valore';
       textI2.innerHTML = 'Inserire secondo valore';
     }
