@@ -39,14 +39,6 @@ document.getElementById('equationSelect').addEventListener('change', function() 
       result = Math.abs(input1 / input2).toFixed(2);
     } else if (equation === 'intensita') {
       result = Math.abs(input1 / input2).toFixed(2);
-    } else if (equation === 'serie2') {
-      result = input1 + input2;
-    } else if (equation === 'serie3') {
-      result = input1 + input2 + input3;
-    } else if (equation === 'parallelo2') {
-      result = (input1 * input2) / (input1 + input2);
-    } else if (equation === 'parallelo3') {
-      result = (input1 * input2 * input3) / (input1 + input2 + input3);
     } else {
       result = 'Seleziona il calcolo da fare.';
     }

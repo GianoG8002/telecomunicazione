@@ -54,13 +54,7 @@ document.getElementById('equationSelect').addEventListener('change', function() 
     let result;
 
 
-    if (equation === 'tensione') {
-      result = input1 * input2;
-    } else if (equation === 'resistenza') {
-      result = Math.abs(input1 / input2).toFixed(2);
-    } else if (equation === 'intensita') {
-      result = Math.abs(input1 / input2).toFixed(2);
-    } else if (equation === 'serie2') {
+    if (equation === 'serie2') {
       result = input1 + input2;
     } else if (equation === 'serie3') {
       result = input1 + input2 + input3;
