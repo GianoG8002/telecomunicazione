@@ -61,7 +61,7 @@ document.getElementById('equationSelect').addEventListener('change', function() 
     } else if (equation === 'parallelo2') {
       result = (input1 * input2) / (input1 + input2);
     } else if (equation === 'parallelo3') {
-      result = (input1 * input2 * input3) / (input1 + input2 + input3);
+      result = 1 / (1/input1 + 1/input2 + 1/input3);
     } else {
       result = 'Seleziona il calcolo da fare.';
     }
