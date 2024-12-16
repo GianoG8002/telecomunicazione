@@ -19,7 +19,10 @@
       <p>È l’opposizione che un materiale offre al passaggio della corrente elettrica. Si misura in <b>Ohm (Ω)</b>. Un materiale con alta resistenza limita il flusso di corrente, mentre uno con bassa resistenza lo permette più facilmente.</p>
             
       <div class='mt-3'>
-        <div id='pagres' class='form-control btn btn-danger'>Pagina resistenze</div>
+        <div id='pagres' class='form-control btn btn-danger'>Resistenze in serie e parallele</div>
+      </div>
+      <div class='mt-3'>
+        <div id='pagkir' class='form-control btn btn-danger'>Leggi di Kirkoff</div>
       </div>
     </div>
     
@@ -44,8 +47,10 @@
         <label id="textI2" for='input2' class='form-label'>Input 2</label>
         <input type='number' class='form-control' id='input2' placeholder='Inserire valore'>
       </div>
-
-      <button class='btn btn-danger' id='calculateButton'><b>Calcola</b></button>
+      
+      <div class="d-grid gap-2">
+        <button class='btn btn-danger' id='calculateButton'><b>Calcola</b></button>
+      </div>
 
       <div class='mt-3'>
         <div id='result' class='form-control'>Risulato</div>

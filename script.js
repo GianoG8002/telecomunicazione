@@ -50,3 +50,6 @@ document.getElementById('equationSelect').addEventListener('change', function() 
 document.getElementById('pagres').onclick = function() {
     window.location.href = 'indexRes.html';
 };
+document.getElementById('pagkir').onclick = function() {
+    window.location.href = 'indexKir.html';
+};
