@@ -8,11 +8,8 @@
   </head>
   <body>
     <div class='container mt-5'><div class='row align-items-start'><div class='col'>      
-      <h3>Leggi di Kirkoff</h3>
-      <h5>Legge delle correnti</h5>
-      <p>La somma delle correnti che entrano in un nodo (punto di connessione tra più fili) è uguale alla somma delle correnti che escono dal nodo.<br>La formula è:<br><b>∑ I in = ∑ I out</b><br>Dove <b>∑ I</b> indica la somma di tutte le correnti dei vari nodi.<br>La legge quindi indica the la corrente in entrata nel circuito è uguale alla corrente in uscita dal circuito.</p>
-      <h5>Legge delle tensioni</h5>
-      <p>La somma delle tensioni lungo un percorso chiuso (una maglia) è uguale a zero.<br>La formula è:<br><b>∑ V = 0</b><br>Dove <b>∑ V</b> indica la somma di tutte le tensioni nel circuito.<br>La legge quindi indica che le tensioni in un circuito si cancellano a vicenda.</p>
+      <h3>Sovrapposiozione degli effetti</h3>
+      <p><b>La sovrapposizione degli effetti</b> si basa sull'idea che in un sistema lineare, la risposta totale del circuito (ad esempio una corrente o una tensione) è data dalla somma delle risposte individuali causate da ciascuna sorgente indipendente, considerata una alla volta.<br>In pratica, si guarda l'effetto di ogni sorgente separatamente e poi si sommano tutti questi effetti per ottenere il risultato finale.<br><br>Questo è possibile perché i circuiti lineari rispettano il principio di linearità, che combina proporzionalità e sovrapponibilità:<br><b>Proporzionalità:</b> Se raddoppi una sorgente, anche la risposta (tensione o corrente) raddoppia.<br><b>Sovrapponibilità:</b> L'effetto combinato di più sorgenti è semplicemente la somma degli effetti individuali.</p>
 
       <div class='mt-3'>
         <div id='pagmain' class='form-control btn btn-danger'>Home</div>
@@ -80,26 +77,6 @@
   document.getElementById('pagmain').onclick = function() {
     window.location.href = 'index.html';
   };
-
-  document.getElementById('calculateButton').addEventListener('click', function() {
-    const res1 = parseFloat(document.getElementById('res1').value);
-    const res2 = parseFloat(document.getElementById('res2').value);
-    const res3 = parseFloat(document.getElementById('res3').value);
-    const res4 = parseFloat(document.getElementById('res4').value);
-    const tens = parseFloat(document.getElementById('ten').value);
-
-    const result1 = tens / (res1 + ((res3 + res4) * res2) / (res2 + res3 + res4));
-    const result2 = result1 * ((res3 + res4) / (res2 + res3 + res4));
-    const result3 = result1 * (res2 / (res2 + res3 + res4));
-
-    const resultDiv1 = document.getElementById('result1');
-    resultDiv1.textContent = `Risultato: ${result1.toFixed(2)}`;
-    const resultDiv2 = document.getElementById('result2');
-    resultDiv2.textContent = `Risultato: ${result2.toFixed(2)}`;
-    const resultDiv3 = document.getElementById('result3');
-    resultDiv3.textContent = `Risultato: ${result3.toFixed(2)}`;
-  });
-
     </script>
   </body>
 </html>
