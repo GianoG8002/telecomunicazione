@@ -1,23 +1,48 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Karnaugh Map Builder and Solver</title>
-	<link rel="stylesheet" href="assets/css/style.css"> 	    
-
+	<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH' crossorigin='anonymous'>
 </head>
 <body>
-	<div class="main">
-		<div class="fluid container add-bottom">
-			<div id="EquationDiv"></div>
-
-			<p class="pull-center"><b>Tabella della verità</b></p>
-		    <div id="TruthTableDiv"></div>
- 
-			<p class="pull-center"><b>Mappa di Karnaugh</b></p>
-		    <div id="KarnoMapDiv"></div>
+	<div class='container mt-5'>
+	<div class="row align-items-center">
+		<div class='col'>      
+			<h3>Mappa di Karnaugh</h3>
+			<p><b>Le mappe di Karnaugh</b> (o diagrammi di Karnaugh) sono uno strumento visivo utilizzato principalmente in algebra booleana per semplificare le espressioni logiche. <br>Queste mappe sono utili per <b>ridurre il numero di termini</b> in una <b>funzione booleana</b>, rendendo più efficienti i circuiti digitali (come quelli usati nei computer e in altri dispositivi elettronici).</p>
+			<h4>Cosa fanno</h4>
+			<p><b>Rappresentano le funzioni booleane</b> in modo grafico. Ogni cella della mappa corrisponde a un possibile valore di ingresso per la funzione booleana.</p>
+			<p><b>Identificano gruppi di celle adiacenti</b> (in termini di 1 o 0) che possono essere combinati per semplificare l'espressione logica.</p>
+			<p><b>Permettono di eliminare variabili inutili</b> o ridondanti dalla funzione, semplificando la progettazione di circuiti logici.</p>
+			<h4>A cosa servono</h4>
+			<p><b>Semplificazione delle funzioni logiche:</b> Forniscono un modo rapido per ridurre il numero di operazioni necessarie per risolvere una funzione logica.</p>
+			<p><b>Progettazione di circuiti digitali:</b> In elettronica digitale, le mappe di Karnaugh sono utilizzate per progettare circuiti logici minimizzati, ottimizzando l'efficienza dei dispositivi.</p>
+			<div class='mt-3'>
+		  		<div id='pagmain' class='form-control btn btn-danger'>Home</div>
+			</div>
+	  	</div>
+		<div class="col">
+			<div class="row align-items-center">
+				<div id="EquationDiv"></div>
+				<div class="col">
+					<p class="pull-center"><b>Mappa di Karnaugh</b></p>
+		    		<div id="KarnoMapDiv"></div>
+				</div>
+				<div class="col">
+					<p class="pull-center"><b>Tabella della verità</b></p>
+		    		<div id="TruthTableDiv"></div>
+				</div>
+			</div>
 		</div>
 	</div>
-	<script src="app.js"></script>	    
+	</div>
+
+	<script src="app.js"></script>	 
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz' crossorigin='anonymous'></script>
+	<script>		
+		document.getElementById('pagmain').onclick = function() {
+    		window.location.href = 'index.html';
+  		};
+	</script>
 </body>
-</html>
