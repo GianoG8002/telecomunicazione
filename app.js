@@ -80,7 +80,7 @@ function InitializeTables(VarCount)
 	{
 		FunctionText += VariableNames[i];
 	}
-	FunctionText+="):";
+	FunctionText+=")<br>";
 }
 
 function HighlightColor( Value )
@@ -567,9 +567,9 @@ function SetValue(Name,Value)
 
 function GenerateTruthTableHTML()
 {
-	var Text = "<table ID=\"TruthTableID\" style=\"text-align:center\">";
+	var Text = "<table ID=\"TruthTableID\" style=\"text-align:center; width: 40vh;\">";
 	{
-		Text = Text + "<thead style=\"background: gainsboro;text-align:center\"><tr>";
+		Text = Text + "<thead style=\"background: gainsboro; text-align:center;\"><tr>";
 		var i=0;
 		for (i=0; i<VariableCount; i++)
 		{
@@ -599,7 +599,7 @@ function GenerateTruthTableHTML()
 				Text = Text + "<td " + color + ">"+ DisplayValue(TruthTable[i][j].Variable)+"</td>";
 			}
 			Text = Text
-				+ "<td><input class=\"remove-bottom full-width\" ID=\""+TruthTable[i].ButtonUIName +"\" name="+TruthTable[i].ButtonUIName +" type='button' value='"+DisplayValue(TruthTable[i].KMapEntry.Value)+"' onClick=\"ToggleTTEntry(TruthTable["+i+"])\" ></td>" 
+				+ "<td><input ID=\""+TruthTable[i].ButtonUIName +"\" name="+TruthTable[i].ButtonUIName +" type='button' value='"+DisplayValue(TruthTable[i].KMapEntry.Value)+"' onClick=\"ToggleTTEntry(TruthTable["+i+"])\" style=\"width: 100%; border: none;\" ></td>" 
 				+ "</tr>";
 		}
 	}
@@ -609,7 +609,7 @@ function GenerateTruthTableHTML()
 
 function GenerateKarnoMapHTML()
 {
-	var Text = "<table><thead><tr>";
+	var Text = "<table style='width: 40vh; height: 40vh'><thead><tr>";
 	var h,w;
 	Text = Text + "<th colspan=\"2\" ></th><th style=\"background: gainsboro;border-bottom:2px solid rgb(31, 39, 55)\" colspan="+(KMap.Width)+">";
 
@@ -650,7 +650,7 @@ function GenerateKarnoMapHTML()
 		{
 
 			Text += "<td  ID='"+KMap[w][h].TDUIName+"' style='text-align:center;'>"
-					+ "<input class=\"remove-bottom full-width\" ID="+KMap[w][h].ButtonUIName +" name="+KMap[w][h].ButtonUIName +" type='button'  value='"+DisplayValue(KMap[w][h].Value)+"' onClick=\"ToggleKMEntry(KMap["+w+"]["+h+"])\">"
+					+ "<input ID="+KMap[w][h].ButtonUIName +" name="+KMap[w][h].ButtonUIName +" type='button'  value='"+DisplayValue(KMap[w][h].Value)+"' onClick=\"ToggleKMEntry(KMap["+w+"]["+h+"])\" style=\"width: 100%; height: 100%; border: none;\">"
 					+ "</td>";
 		}
 		Text += "</tr>";
@@ -669,7 +669,7 @@ function GenerateEquationHTML()
 		var Text = "<p class=\"header-color remove-bottom\">";
 		for (j=0; (j < 8) && (i<Equation.UsedLength); j++)
 		{
-			if (i==0) Text+= "<b>"+FunctionText + " = ";
+			if (i==0) Text+= "<b>"+FunctionText;
 			Text += "<span class=\"blue button half-bottom\" id=\""+Equation[i].ButtonUIName + "\" onMouseOver=\"SetShowRect(Equation["+i+"],"+i+");\" onMouseOut=\"SetShowRect(null);\" style=\"padding:5px\">";
 			Text += "<b>" + Equation[i].Expression + "</span>";
 			if (i<Equation.UsedLength-1) Text +=" <span> + </span>";
